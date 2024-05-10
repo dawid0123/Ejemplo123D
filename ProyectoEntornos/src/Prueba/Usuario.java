@@ -57,7 +57,7 @@ public class Usuario {
         return contactos;
     }
 
-    private void recibirMensaje(Mensaje mensaje) {
+    public void recibirMensaje(Mensaje mensaje) {
         mensajesRecibidos.add(mensaje);
     }
 		
