@@ -1,12 +1,12 @@
-package proyecto;
+package Prueba;
 
-public class Contactos {
+public class Contacto {
 	private String numTelefono;
 	private String nombre;
 	
 	//CONSTRUCTOR
 
-	public Contactos(String num,String nom) {
+	public Contacto(String num,String nom) {
 		this.nombre=nom;
 		this.numTelefono=num;
 		
