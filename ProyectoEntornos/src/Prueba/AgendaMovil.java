@@ -21,9 +21,4 @@ public class AgendaMovil {
         }
         return null;
     }
-
-    // Implementa los métodos adicionales según sea necesario para interactuar con la aplicación
 }
-
-
-

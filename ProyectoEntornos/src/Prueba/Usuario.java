@@ -1,68 +1,69 @@
-package Prueba;
+ package Prueba;
 
-import java.util.ArrayList;
-import java.util.List;
+ import java.util.ArrayList;
+ import java.util.List;
 
-public class Usuario {
-	
-	private String numeroTelefono;
-    private String tipo;
-    private List<Contacto> contactos;
-    private List<Mensaje> mensajesEnviados;
-    private List<Mensaje> mensajesRecibidos;
+ public class Usuario {
+     private String numeroTelefono;
+     private String tipo;
+     private boolean esAdmin;
+     private List<Contacto> contactos;
+     private List<Mensaje> mensajesEnviados;
+     private List<Mensaje> mensajesRecibidos;
 
-    public Usuario(String numeroTelefono) {
-        this.numeroTelefono = numeroTelefono;
-        this.contactos = new ArrayList<>();
-        this.mensajesEnviados = new ArrayList<>();
-        this.mensajesRecibidos = new ArrayList<>();
-    }
+     public Usuario(String numeroTelefono, String tipo, boolean esAdmin) {
+         this.numeroTelefono = numeroTelefono;
+         this.tipo = tipo;
+         this.esAdmin = esAdmin;
+         this.contactos = new ArrayList<>();
+         this.mensajesEnviados = new ArrayList<>();
+         this.mensajesRecibidos = new ArrayList<>();
+     }
 
-    public String getNumeroTelefono() {
-        return numeroTelefono;
-    }
+     public String getNumeroTelefono() {
+         return numeroTelefono;
+     }
 
-    public String getTipo() {
-        return tipo;
-    }
+     public String getTipo() {
+         return tipo;
+     }
 
-    public void agregarContacto(Contacto contacto) {
-        contactos.add(contacto);
-    }
+     public boolean esAdmin() {
+         return esAdmin;
+     }
 
-    public void enviarMensaje(Usuario destinatario, Mensaje mensaje) {
-        destinatario.recibirMensaje(mensaje);
-        mensajesEnviados.add(mensaje);
-    }
+     public void agregarContacto(Contacto contacto) {
+         contactos.add(contacto);
+     }
 
-    public List<Mensaje> verMensajesEnviados() {
-        return mensajesEnviados;
-    }
+     public void enviarMensaje(Usuario destinatario, Mensaje mensaje) {
+         destinatario.recibirMensaje(mensaje);
+         mensajesEnviados.add(mensaje);
+     }
 
-    public List<Mensaje> verMensajesRecibidos() {
-        return mensajesRecibidos;
-    }
+     public List<Mensaje> verMensajesEnviados() {
+         return mensajesEnviados;
+     }
 
-    public List<Mensaje> verMensajesRecibidosDeEmisor(Usuario emisor) {
-        List<Mensaje> mensajes = new ArrayList<>();
-        for (Mensaje mensaje : mensajesRecibidos) {
-            if (mensaje.getRemitente().equals(emisor)) {
-                mensajes.add(mensaje);
-            }
-        }
-        return mensajes;
-    }
+     public List<Mensaje> verMensajesRecibidos() {
+         return mensajesRecibidos;
+     }
 
-    public List<Contacto> verListaContactos() {
-        return contactos;
-    }
+     public List<Mensaje> verMensajesRecibidosDeEmisor(Usuario emisor) {
+         List<Mensaje> mensajes = new ArrayList<>();
+         for (Mensaje mensaje : mensajesRecibidos) {
+             if (mensaje.getRemitente().equals(emisor)) {
+                 mensajes.add(mensaje);
+             }
+         }
+         return mensajes;
+     }
 
-    public void recibirMensaje(Mensaje mensaje) {
-        mensajesRecibidos.add(mensaje);
-    }
-		
-		
+     public List<Contacto> verListaContactos() {
+         return contactos;
+     }
 
-}
-	
-	
+     private void recibirMensaje(Mensaje mensaje) {
+         mensajesRecibidos.add(mensaje);
+     }
+ }
