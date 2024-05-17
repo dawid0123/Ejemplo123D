@@ -2,7 +2,16 @@ package Prueba;
 
 import java.util.List;
 
+/**
+ * La clase principal que demuestra el uso de las clases Usuario, Contacto, Mensaje, MensajeTexto, 
+ * MensajeMultimedia, y AgendaMovil.
+ */
 public class Main {
+    /**
+     * El punto de entrada principal del programa.
+     *
+     * @param args los argumentos de la línea de comandos
+     */
     public static void main(String[] args) {
         // Crear la agenda móvil
         AgendaMovil agendaMovil = new AgendaMovil();
@@ -20,7 +29,7 @@ public class Main {
         Contacto contacto2 = new Contacto("222222222", "Bob");
 
         // Agregar contactos a usuario1
-        usuario1.agregarContacto(contacto1);
+        usuario1.agregarContacto(contacto1);  
         usuario1.agregarContacto(contacto2);
 
         // Enviar mensajes
@@ -85,3 +94,4 @@ public class Main {
         }
     }
 }
+
